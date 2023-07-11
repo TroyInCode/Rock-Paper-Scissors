@@ -11,10 +11,13 @@
 	<script>
         //**Create a function called getComputerChoice that will randomly return Rock, Paper, or Scissors**//
         //Declare variables for Rock, Paper, and Scissors//
-        let textArray = ["Rock", "Paper", "Scissors"];
+        const textArray = ["Rock", "Paper", "Scissors"];
         //Create a function and name it getComputerChoice//
         function getComputerChoice (){
-
+            let random = Math.floor((Math.random()* textArray.length));
+            let randomName = textArray[random];
+            return randomName
+            console.log(randomName);
         }
         //Make this function randomly return a variable//
         //Make this function randomly return a variable of the three given//
