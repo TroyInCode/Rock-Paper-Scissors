@@ -4,47 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Rock Paper Scissors</title>
+    <title>rock"paper scissors</title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
 	<script>
-        //**Create a function called getComputerChoice that will randomly return Rock, Paper, or Scissors**
-        //Declare any variables for Rock, Paper, Scissors game
+        //**Create a function called getComputerChoice that will randomly return rock,"paper, or scissors**
+        //Declare any variables for rock,"paper, scissors game
         const textArray = ["Rock", "Paper", "Scissors"];
         //Create a function and name it getComputerChoice
         function getComputerChoice (){
-            let random = Math.floor((Math.random()* textArray.length));
-            let randomName = textArray[random];
-            return randomName;
+             return textArray[Math.floor(Math.random()* textArray.length)];
         }
+        
         //Make this function randomly return a variable
         //Make this function randomly return a variable of the three given
-        console.log(getComputerChoice());
+        
 
-        //**Create a function that plays a single round of Rock, Paper, Scissors that takes two parameters
+        //**Create a function that plays a single round of rock,"paper, scissors that takes two parameters
         //Create a function that accepts two parameters (Users Input and Computers Input)
-        function playGame (playerSelection, computerSelection) {
-                if (playerSelection.toLowerCase() == computerSelection.toLowerCase()) {
-                    console.log("It's a draw, both players win!");
-                } else if (playerSelection.toLowerCase() == Scissors && computerSelection.toLowerCase()== Rock) {
-                    console.log("You lose this round! Rock beats Scissors!");
-                } else if (playerSelection.toLowerCase() == Scissors && computerSelection.toLowerCase == Paper) {
-                    console.log("You win this round! Scissors beats Paper!");
-                } else if (playerSelection.toLowerCase() == Rock && computerSelection.toLowerCase() == Paper) {
-                    console.log("You lose this round! Paper beats Rock!");
-                } else if (playerSelection.toLowerCase() == Rock && computerSelection.toLowerCase()== Scissors){
-                    console.log("You win this round! Rock beats Scissors!");
-                } else if (playerSelection.toLowerCase() == Paper && computerSelection.toLowerCase() == Rock) {
-                    console.log("You win this round! Paper beats Rock!");
-                } else if (playerSelection.toLowerCase() == Paper && computerSelection.toLowerCase() == Scissors) {
-                    console.log("You lose this round! Scissors beats Paper!");
+         function playGame (playerSelection, computerSelection) {
+                if (playerSelection.toLowerCase() === computerSelection.toLowerCase()) {
+                     console.log("It's a draw, both players win!");
+                } else if (playerSelection.toLowerCase() === "scissors" && computerSelection.toLowerCase() === "rock") {
+                     console.log("You lose this round! Rock beats Scissors!");
+                } else if (playerSelection.toLowerCase() === "scissors" && computerSelection.toLowerCase() === "paper") {
+                     console.log("You win this round! Scissors beats Paper!");
+                } else if (playerSelection.toLowerCase() === "rock" && computerSelection.toLowerCase() === "paper") {
+                     console.log("You lose this round! Paper beats Rock!");
+                } else if (playerSelection.toLowerCase() === "rock" && computerSelection.toLowerCase() === "scissors"){
+                     console.log("You win this round! Rock beats Scissors!");
+                } else if (playerSelection.toLowerCase() === "paper" && computerSelection.toLowerCase() === "rock") {
+                     console.log("You win this round! Paper beats Rock!");
+                } else if (playerSelection.toLowerCase() === "paper" && computerSelection.toLowerCase() === "scissors") {
+                     console.log("You lose this round! Scissors beats Paper!");
                 } else {
                     console.log ("Your choice is invalid. Please enter rock, paper, or scissors");
-                } 
+                }  
+
         }
         //Make the function return a string that declares a winner or loser
-        //Make the function accept case insensitive inputs from user 
+        //Make the function accept case insensitive inputs from user
+        //Declare computerSelection value
+        const computerSelection = getComputerChoice();
+        playGame("Rock", computerSelection);
     </script>
   </body>
 </html>
