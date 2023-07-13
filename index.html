@@ -12,6 +12,8 @@
         //**Create a function called getComputerChoice that will randomly return rock,"paper, or scissors**
         //Declare any variables for rock,"paper, scissors game
         const textArray = ["Rock", "Paper", "Scissors"];
+        let computerScore = 0;
+        let userScore = 0;
         //Create a function and name it getComputerChoice
         function getComputerChoice (){
              return textArray[Math.floor(Math.random()* textArray.length)];
@@ -25,43 +27,65 @@
         //Create a function that accepts two parameters (Users Input and Computers Input)
          function playRound (playerSelection, computerSelection) {
                 if (playerSelection.toLowerCase() === computerSelection.toLowerCase()) {
-                     console.log("It's a draw, both players win!");
+                     console.log("This round is a draw!");
+                     computerScore++;
+                     userScore++;
                 } else if (playerSelection.toLowerCase() === "scissors" && computerSelection.toLowerCase() === "rock") {
                      console.log("You lose this round! Rock beats Scissors!");
+                     computerScore++;
                 } else if (playerSelection.toLowerCase() === "scissors" && computerSelection.toLowerCase() === "paper") {
                      console.log("You win this round! Scissors beats Paper!");
+                     userScore++;
                 } else if (playerSelection.toLowerCase() === "rock" && computerSelection.toLowerCase() === "paper") {
                      console.log("You lose this round! Paper beats Rock!");
+                     computerScore++;
                 } else if (playerSelection.toLowerCase() === "rock" && computerSelection.toLowerCase() === "scissors"){
                      console.log("You win this round! Rock beats Scissors!");
+                     userScore++;
                 } else if (playerSelection.toLowerCase() === "paper" && computerSelection.toLowerCase() === "rock") {
                      console.log("You win this round! Paper beats Rock!");
+                     userScore++;
                 } else if (playerSelection.toLowerCase() === "paper" && computerSelection.toLowerCase() === "scissors") {
                      console.log("You lose this round! Scissors beats Paper!");
+                     computerScore++;
                 } else {
                     console.log ("Your choice is invalid. Please enter rock, paper, or scissors");
                 }  
-
+                //Display scores after each round//
+               console.log("Computer Score is: " + computerScore);
+               console.log("User Score is: " + userScore); 
         }
         //Make the function return a string that declares a winner or loser
         //Make the function accept case insensitive inputs from user
-        //Declare computerSelection value
-        const computerSelection = getComputerChoice();
 
         //Create a function named game
         function game() {
           for (let i = 0; i < 5; i++)  {
-            console.log(playRound(prompt("Choose Rock, Paper, or Scissors"), computerSelection));
-          } 
-          
+          const playerSelection = prompt("Choose Rock, Paper, or Scissors");
+          const computerSelection = getComputerChoice();  
+             playRound(playerSelection, computerSelection);
+             }
+               
+               //Declare a winner or loser at the end of five rounds//      
+               if (i = 4 && computerScore > userScore) {
+                    console.log ("Sorry, you lost the game...");
+                } else if (i = 4 && userScore > computerScore) {
+                    console.log("Congratulations, you won the game!");
+                } else if (i = 4 && userScore === computerScore) {
+                    console.log("Its a draw! Both players win!");
+                }
+                    
+               
+                  
         }
-
         //Use the playRound function inside of this function
         //This function should play a five round game
         //This function should keep score
         //This function should report a winner or loser at the end
         //Use console.log to display the results of each round
         //Use prompt() to get input from the user
+       
+        //Start the game//
         game();
     </script>
   </body>
