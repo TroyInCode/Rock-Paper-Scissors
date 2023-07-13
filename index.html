@@ -47,13 +47,22 @@
         //Make the function accept case insensitive inputs from user
         //Declare computerSelection value
         const computerSelection = getComputerChoice();
-        playRound("Rock", computerSelection);
 
         //Create a function named game
-        //Use the playGame function inside of this function
+        function game() {
+          for (let i = 0; i < 5; i++)  {
+            console.log(playRound(prompt("Choose Rock, Paper, or Scissors"), computerSelection));
+          } 
+          
+        }
+
+        //Use the playRound function inside of this function
         //This function should play a five round game
         //This function should keep score
         //This function should report a winner or loser at the end
+        //Use console.log to display the results of each round
+        //Use prompt() to get input from the user
+        game();
     </script>
   </body>
 </html>
