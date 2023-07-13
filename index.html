@@ -23,7 +23,7 @@
 
         //**Create a function that plays a single round of rock,"paper, scissors that takes two parameters
         //Create a function that accepts two parameters (Users Input and Computers Input)
-         function playGame (playerSelection, computerSelection) {
+         function playRound (playerSelection, computerSelection) {
                 if (playerSelection.toLowerCase() === computerSelection.toLowerCase()) {
                      console.log("It's a draw, both players win!");
                 } else if (playerSelection.toLowerCase() === "scissors" && computerSelection.toLowerCase() === "rock") {
@@ -47,7 +47,13 @@
         //Make the function accept case insensitive inputs from user
         //Declare computerSelection value
         const computerSelection = getComputerChoice();
-        playGame("Rock", computerSelection);
+        playRound("Rock", computerSelection);
+
+        //Create a function named game
+        //Use the playGame function inside of this function
+        //This function should play a five round game
+        //This function should keep score
+        //This function should report a winner or loser at the end
     </script>
   </body>
 </html>
