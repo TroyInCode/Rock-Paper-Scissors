@@ -9,11 +9,22 @@
   </head>
   <body>
 
-     <button>Rock</button>
-     <br>
-     <button>Paper</button>
-     <br>
-     <button>Scissors</button>
+     <button id="rockbtn">Rock</button>
+     <br><br>
+     <button id="paperbtn">Paper</button>
+     <br><br>
+     <button id="scissorsbtn">Scissors</button>
+
+     <br><br>
+     <!--Displays Score-->
+     <div id="scorekeeper"> 
+
+     </div>
+     <br><br>
+
+     <div id="compscore">
+
+     </div>
 
 	<script>
         //**Create a function called getComputerChoice that will randomly return rock,"paper, or scissors**
@@ -26,13 +37,13 @@
              return textArray[Math.floor(Math.random()* textArray.length)];
         }
         
-        //Make this function randomly return a variable
-        //Make this function randomly return a variable of the three given
+        const computerSelection = getComputerChoice();
         
-
+      
         //**Create a function that plays a single round of rock,"paper, scissors that takes two parameters
         //Create a function that accepts two parameters (Users Input and Computers Input)
          function playRound (playerSelection, computerSelection) {
+          //const playerSelection// Save for Later
                 if (playerSelection.toLowerCase() === computerSelection.toLowerCase()) {
                      console.log("This round is a draw!");
                      computerScore++;
@@ -67,8 +78,6 @@
 
         //Create a function named game
         function game() {
-          const playerSelection = prompt("Choose Rock, Paper, or Scissors");
-          const computerSelection = getComputerChoice();  
              playRound(playerSelection, computerSelection);
              
                
@@ -92,7 +101,21 @@
         //Use prompt() to get input from the user
        
         //Start the game//
-        game();
+        //game();//
+
+        //Event Listener for Button Click//
+        document.getElementById("rockbtn").addEventListener("click", function() {
+          playRound("Rock", getComputerChoice())
+        });
+        document.getElementById("paperbtn").addEventListener("click", function () {
+          playRound("Paper", getComputerChoice())
+        });
+        document.getElementById("scissorsbtn").addEventListener("click", function () {
+          playRound("Scissors", getComputerChoice())
+        });
+        //Keep Score//
+        document.getElementById("scorekeeper").textContent = "Player Score: " + userScore;
+        document.getElementById("compscore").textContent = "Computer Score: " + computerScore;
     </script>
   </body>
 </html>
