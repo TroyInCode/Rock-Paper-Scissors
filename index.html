@@ -17,14 +17,15 @@
 
      <br><br>
      <!--Displays Score-->
-     <div id="scorekeeper"> 
+     <div id="scorekeeper"> </div>
 
-     </div>
      <br><br>
 
-     <div id="compscore">
+     <div id="compscore"></div>
 
-     </div>
+     <br><br>
+
+     <div id="scoremessage"></div>
 
 	<script>
         //**Create a function called getComputerChoice that will randomly return rock,"paper, or scissors**
@@ -45,39 +46,43 @@
          function playRound (playerSelection, computerSelection) {
           //const playerSelection// Save for Later
                 if (playerSelection.toLowerCase() === computerSelection.toLowerCase()) {
-                     console.log("This round is a draw!");
+                    document.getElementById("scoremessage").textContent = "This round is a draw!";
                      computerScore++;
                      userScore++;
                 } else if (playerSelection.toLowerCase() === "scissors" && computerSelection.toLowerCase() === "rock") {
-                     console.log("You lose this round! Rock beats Scissors!");
+                    document.getElementById("scoremessage").textContent = "You lose this round! Rock beats Scissors!";
                      computerScore++;
                 } else if (playerSelection.toLowerCase() === "scissors" && computerSelection.toLowerCase() === "paper") {
-                     console.log("You win this round! Scissors beats Paper!");
+                    document.getElementById("scoremessage").textContent = "You win this round! Scissors beats Paper!";
                      userScore++;
                 } else if (playerSelection.toLowerCase() === "rock" && computerSelection.toLowerCase() === "paper") {
-                     console.log("You lose this round! Paper beats Rock!");
+                    document.getElementById("scoremessage").textContent = "You lose this round! Paper beats Rock!";
                      computerScore++;
                 } else if (playerSelection.toLowerCase() === "rock" && computerSelection.toLowerCase() === "scissors"){
-                     console.log("You win this round! Rock beats Scissors!");
+                    document.getElementById("scoremessage").textContent = "You win this round! Rock beats Scissors!";
                      userScore++;
                 } else if (playerSelection.toLowerCase() === "paper" && computerSelection.toLowerCase() === "rock") {
-                     console.log("You win this round! Paper beats Rock!");
+                    document.getElementById("scoremessage").textContent = "You win this round! Paper beats Rock!";
                      userScore++;
                 } else if (playerSelection.toLowerCase() === "paper" && computerSelection.toLowerCase() === "scissors") {
-                     console.log("You lose this round! Scissors beats Paper!");
+                    document.getElementById("scoremessage").textContent = "You lose this round! Scissors beats Paper!";
                      computerScore++;
                 } else {
-                    console.log ("Your choice is invalid. Please enter rock, paper, or scissors");
+                    document.getElementById("scoremessage").textContent = "Your choice is invalid. Please enter rock, paper, or scissors";
                 }  
                 //Display scores after each round//
-               console.log("Computer Score is: " + computerScore);
-               console.log("User Score is: " + userScore); 
+
+        playerScoreDiv = document.getElementById("scorekeeper");
+        playerScoreDiv.textContent = "Player Score: " + userScore;
+        compScoreDiv = document.getElementById("compscore");
+        compScoreDiv.textContent = "Computer Score: " + computerScore;
         }
         //Make the function return a string that declares a winner or loser
         //Make the function accept case insensitive inputs from user
 
         //Create a function named game
         function game() {
+          for (i = 0; i < 5; i++) 
              playRound(playerSelection, computerSelection);
              
                
@@ -101,7 +106,7 @@
         //Use prompt() to get input from the user
        
         //Start the game//
-        //game();//
+        game();
 
         //Event Listener for Button Click//
         document.getElementById("rockbtn").addEventListener("click", function() {
@@ -113,9 +118,6 @@
         document.getElementById("scissorsbtn").addEventListener("click", function () {
           playRound("Scissors", getComputerChoice())
         });
-        //Keep Score//
-        document.getElementById("scorekeeper").textContent = "Player Score: " + userScore;
-        document.getElementById("compscore").textContent = "Computer Score: " + computerScore;
     </script>
   </body>
 </html>
