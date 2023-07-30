@@ -50,6 +50,9 @@
         //**Create a function that plays a single round of rock,"paper, scissors that takes two parameters
         //Create a function that accepts two parameters (Users Input and Computers Input)
          function playRound (playerSelection, computerSelection) {
+                document.getElementById("scoremessage").textContent = "";
+                document.getElementById("gamecomplete").textContent = "";
+
                 if (playerSelection.toLowerCase() === computerSelection.toLowerCase()) {
                     document.getElementById("scoremessage").textContent = "This round is a draw!";
                      computerScore++;
@@ -109,7 +112,8 @@
                 } else if (userScore === computerScore) {
                     document.getElementById("gamecomplete").textContent = "Its a draw! Both players win!";
                 }
-                 
+                
+                
         }
         
        
