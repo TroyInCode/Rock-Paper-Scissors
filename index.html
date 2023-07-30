@@ -17,10 +17,11 @@
 
      <br><br>
      <!--Displays Score-->
-     <div id="scorekeeper"> </div>
+     <p>Player Score: </p>
+     <div id="playerscore"> </div>
 
      <br><br>
-
+      <p>Computer Score: </p>
      <div id="compscore"></div>
 
      <br><br>
@@ -37,6 +38,7 @@
         const textArray = ["Rock", "Paper", "Scissors"];
         let computerScore = 0;
         let userScore = 0;
+        let roundsPlayed = 0;
         //Create a function and name it getComputerChoice
         function getComputerChoice (){
              return textArray[Math.floor(Math.random()* textArray.length)];
@@ -48,7 +50,6 @@
         //**Create a function that plays a single round of rock,"paper, scissors that takes two parameters
         //Create a function that accepts two parameters (Users Input and Computers Input)
          function playRound (playerSelection, computerSelection) {
-          //const playerSelection// Save for Later
                 if (playerSelection.toLowerCase() === computerSelection.toLowerCase()) {
                     document.getElementById("scoremessage").textContent = "This round is a draw!";
                      computerScore++;
@@ -74,62 +75,62 @@
                 } else {
                     document.getElementById("scoremessage").textContent = "Your choice is invalid. Please enter rock, paper, or scissors";
                 }  
-                //Display scores after each round//
 
-        playerScoreDiv = document.getElementById("scorekeeper");
-        playerScoreDiv.textContent = "Player Score: " + userScore;
-        compScoreDiv = document.getElementById("compscore");
-        compScoreDiv.textContent = "Computer Score: " + computerScore;
+                //Increment roundsPlayed after each round//
+                roundsPlayed++;
+                
+                if (roundsPlayed === 5) {
+                  fiveRounds();
+                  userScore = 0;
+                  computerScore = 0;
+                  roundsPlayed = 0;
+                  return userScore && computerScore;
+                }
+
+                
+                  //Display scores after each round//
+                  playerScoreDiv = document.getElementById("playerscore");
+                  playerScoreDiv.textContent = + userScore;
+                  compScoreDiv = document.getElementById("compscore");
+                  compScoreDiv.textContent = + computerScore;
+
         }
-        //Make the function return a string that declares a winner or loser
-        //Make the function accept case insensitive inputs from user
 
+
+ 
         //Displays a message after five rounds are played//
         function fiveRounds() {
+                
                //Declare a winner or loser at the end of five rounds//      
-               if (computerScore === 5) {
+               if (computerScore > userScore) {
                     document.getElementById("gamecomplete").textContent = "Sorry, you lost the game...";
-                } else if (userScore === 5) {
+                } else if (userScore > computerScore) {
                     document.getElementById("gamecomplete").textContent = "Congratulations, you won the game!";
                 } else if (userScore === computerScore) {
                     document.getElementById("gamecomplete").textContent = "Its a draw! Both players win!";
                 }
-                    
-               
-                  
+                 
         }
         
-        function roundCounter() {
-           let i = 0;
-            i++;
-            if (i = 5) {
-              userScore = 0;
-              computerScore = 0;
-            }
-          
-        }
        
 
         //Event Listeners for Button Clicks//
         document.getElementById("rockbtn").addEventListener("click", function() {
           playerSelection = "Rock";
           playRound(playerSelection, getComputerChoice());
-          roundCounter();
-          fiveRounds();
+          
+
         });
         document.getElementById("paperbtn").addEventListener("click", function () {
           playerSelection = "Paper";
           playRound(playerSelection, getComputerChoice());
-          roundCounter();
-          fiveRounds();
+
           
         });
         document.getElementById("scissorsbtn").addEventListener("click", function () {
           playerSelection = "Scissors";
           playRound(playerSelection, getComputerChoice());
-          roundCounter();
-          fiveRounds();
-          
+
         });
     </script>
   </body>
