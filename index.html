@@ -28,7 +28,7 @@
      <div id="scoremessage"></div>
 
      <br><br>
-     
+
      <div id="gamecomplete"></div>
 
 	<script>
@@ -41,7 +41,7 @@
         function getComputerChoice (){
              return textArray[Math.floor(Math.random()* textArray.length)];
         }
-        const playerSelection = " ";
+        let playerSelection = " ";
         const computerSelection = getComputerChoice();
         
       
@@ -84,42 +84,52 @@
         //Make the function return a string that declares a winner or loser
         //Make the function accept case insensitive inputs from user
 
-        //Create a function named game
-        function game() {
-          for (let i = 0; i < 5; i++) 
-             playRound(playerSelection, computerSelection);
-             
-               
+        //Displays a message after five rounds are played//
+        function fiveRounds() {
                //Declare a winner or loser at the end of five rounds//      
-               if (i = 4 && computerScore > userScore) {
+               if (computerScore === 5) {
                     document.getElementById("gamecomplete").textContent = "Sorry, you lost the game...";
-                } else if (i = 4 && userScore > computerScore) {
+                } else if (userScore === 5) {
                     document.getElementById("gamecomplete").textContent = "Congratulations, you won the game!";
-                } else if (i = 4 && userScore === computerScore) {
+                } else if (userScore === computerScore) {
                     document.getElementById("gamecomplete").textContent = "Its a draw! Both players win!";
                 }
                     
                
                   
         }
-
+        
+        function roundCounter() {
+           let i = 0;
+            i++;
+            if (i = 5) {
+              userScore = 0;
+              computerScore = 0;
+            }
+          
+        }
        
 
-        //Event Listener for Button Click//
+        //Event Listeners for Button Clicks//
         document.getElementById("rockbtn").addEventListener("click", function() {
           playerSelection = "Rock";
           playRound(playerSelection, getComputerChoice());
-          game();
+          roundCounter();
+          fiveRounds();
         });
         document.getElementById("paperbtn").addEventListener("click", function () {
           playerSelection = "Paper";
           playRound(playerSelection, getComputerChoice());
-          game();  
+          roundCounter();
+          fiveRounds();
+          
         });
         document.getElementById("scissorsbtn").addEventListener("click", function () {
           playerSelection = "Scissors";
           playRound(playerSelection, getComputerChoice());
-          game();
+          roundCounter();
+          fiveRounds();
+          
         });
     </script>
   </body>
