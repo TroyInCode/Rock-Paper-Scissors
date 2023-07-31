@@ -1,0 +1,12 @@
+#mybuttons {
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+gap: 35px;
+}
+
+#rockbtn, #paperbtn, #scissorsbtn {
+    padding: 10px;
+    
+}
