@@ -7,6 +7,28 @@ gap: 35px;
 }
 
 #rockbtn, #paperbtn, #scissorsbtn {
-    padding: 10px;
-    
+padding: 10px;
+border-radius: 14px;
+border: none;
+cursor: pointer;
+}
+
+#rockbtn {
+background-color: #15c604;
+color: white;
+}
+
+#paperbtn {
+background-color: #046bc6;
+color: white;
+}
+
+#scissorsbtn {
+background-color: #e30a14;
+color: white;
+}
+
+#myscores {
+    display: flex;
+    justify-content: space-between;
 }
