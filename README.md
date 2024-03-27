@@ -18,3 +18,18 @@ Each outcome is randomized via the use of event listeners.
 - **_Improved Graphics and Images_**
 - **_Audio for rock, paper, and scissor selections_**
 - **_Image displays to show player choice and computer choice per round_**
+
+# How To Play
+Choose your weapon! Choose either rock, paper, or scissors and see if your selection trumps the choice the computer made. For those unfamiliar with the game:
+
+- Rock beats Scissors
+- Paper beats Rock
+- Scissors beats Paper
+
+# Install
+No install necessary
+
+Play the game [here](https://troyincode.github.io/Rock-Paper-Scissors/)!
+
+# Credits
+This game was created by me as a part of [The Odin Project](https://www.theodinproject.com/) , an open-source website that teaches web development through applicable projects and portfolio building.
