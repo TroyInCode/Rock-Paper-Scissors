@@ -34,16 +34,19 @@ background-color: #e30a14;
 color: white;
 }
 
-#myscores {
+#playercontainer{
     display: flex;
     justify-content: space-between;
+    position: absolute;
+    top: 18%;
+    right: 39%;
 }
 
 /* Displays Weapon Choices Made By Player and Computer */
 
 .wpnchoice {
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     border: 4px solid black;
     border-radius: 12px;
 }
@@ -53,4 +56,10 @@ color: white;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    top: 10%;
+    left: 45%;
+    gap: 130px;
 }
+
+
