@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Rock, Paper, Scissors</title>
-    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="normalize.css"> 
   </head>
   <body>
 
@@ -28,25 +29,28 @@
 
      <div id="myscores">
       
-     <div id="computercontainer">
+     <div id="playercontainer">
        <p>Player Score </p>
        <div id="playerscore"></div>
      </div>
 
      
-      <div id="playercontainer">
+      <div id="computercontainer">
         <p>Computer Score </p>
              <div id="compscore"></div>
       </div>
     </div>
 
-     <br><br>
-      <p>Round Result:</p>
-     <div id="scoremessage"></div>
 
-     <br><br>
-      <p>Final Result:</p>
-     <div id="gamecomplete"></div>
+      <div id="roundcontainer">
+        <p>Round Result:</p>
+             <div id="scoremessage"></div>
+      </div>
+
+      <div id="finalcontainer">
+        <p>Final Result:</p>
+             <div id="gamecomplete"></div>
+      </div>
     
      <!--JavaScript-->
      <script src="myscript.js"></script>

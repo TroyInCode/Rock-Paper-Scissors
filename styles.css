@@ -34,15 +34,18 @@ background-color: #e30a14;
 color: white;
 }
 
-#playercontainer{
+
+/*Display Scores*/
+
+#computercontainer{
     display: flex;
     justify-content: space-between;
     position: absolute;
     top: 18%;
-    right: 39%;
+    right: 34%;
 }
 
-#computercontainer{
+#playercontainer{
     display: flex;
     justify-content: space-between;
     position: absolute;
