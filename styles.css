@@ -63,6 +63,14 @@ color: white;
     
 }
 
+#finalcontainer {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 78%;
+    right: 47%;
+}
+
 /* Displays Weapon Choices Made By Player and Computer */
 
 .wpnchoice {
