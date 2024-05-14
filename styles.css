@@ -42,15 +42,25 @@ color: white;
     justify-content: space-between;
     position: absolute;
     top: 18%;
-    right: 34%;
+    right: 36%;
 }
 
 #playercontainer{
     display: flex;
     justify-content: space-between;
     position: absolute;
-    bottom: 35%;
-    right: 38%;
+    bottom: 38%;
+    right: 37.5%;
+}
+
+#roundcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 38%;
+    right: 47%;
+    
 }
 
 /* Displays Weapon Choices Made By Player and Computer */
