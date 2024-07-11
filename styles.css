@@ -91,3 +91,8 @@ color: white;
     gap: 130px;
 }
 
+img {
+    border-radius: 12px;
+    width: 200px;
+    height: 200px;
+}
